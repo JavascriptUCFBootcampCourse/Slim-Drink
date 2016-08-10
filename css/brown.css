@@ -1,0 +1,90 @@
+
+a, blockquote span {
+color: #833545;
+}
+a.button_full, a.button_small, .call_button a{
+background-color:#833545;
+}
+.button {
+border: 1px solid #833545;
+color: #833545;
+}
+.button.active {
+background: #833545;
+}
+#pages_maincontent h3{
+color:#833545;
+}
+.photo-categories a.active{
+background-color:#833545;
+}
+.post_date{
+color:#833545;
+}
+.list-block .swipeout-actions-left a,
+.list-block .swipeout-actions-right a {
+background: #833545;
+}
+.info1 input.form_submit, .loginform input.form_submit, .commentform input.form_submit{
+background-color:#833545;
+}
+ul.responsive_table li:first-child{
+background-color:#833545;
+color:#FFFFFF;
+}
+li.table_row{
+background-color:#e6e6e6;
+}
+.blog_nav a{
+background-color:#833545;
+}
+
+.homepage{
+background: url(../images/bg.jpg) no-repeat center center;
+background-attachment:fixed;
+-webkit-background-size: 100%;
+-moz-background-size: 100%;
+-o-background-size: 100%;
+background-size: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.navbarpages{
+background:url(../images/header.jpg) no-repeat center center;
+}
+
+.main-nav ul li{
+background: #562037;
+border-bottom:1px #692c46 solid;
+}
+.main-nav ul li a{
+color:#c6a0b1;
+}
+
+.popup, .page_content_menu{
+background: #523432;
+}
+.popup-login, .popup-signup, .popup-forgot{
+background-color:#263239;
+}
+.toolbar:before {
+  background-color: #523432;
+}
+
+.panel {
+background:#523432;
+}
+.user-nav ul li, ul.popular_posts li{
+border-bottom:1px #9b4d5b solid;
+}
+
+ul.toolbar_icons li.menuicon{
+background-color:#523432;
+}
+
+
+.close_popup_button a{
+background-color:#873a48;
+}
