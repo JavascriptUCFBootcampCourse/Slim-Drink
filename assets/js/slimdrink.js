@@ -2,27 +2,24 @@ $(document).ready(function()
 {
 	/*
 		TODO: 
-		- capture gender
-		- potentially fix bac formula
 		- create divs for each hours alcohol consumption
 	*/
-	var nutritionixAppId = '66148b0c';
-	var nutritionixAppKey = 'fa8f5f681a9b4939d83631e3230ebb6d';
-	var nutritionixQueryUrl = 'https://api.nutritionix.com/v1_1/search/%ALCOHOL%?fields=*&appId='+nutritionixAppId+'&appKey='+nutritionixAppKey;
 	var usdaKey = '8XH1PqPkLb7GfZa9BMvfIqM8cpnjaBIzMCQ1pfkB';
 	var usdaSearchQueryUrl = 'http://api.nal.usda.gov/ndb/search/?format=json&fg=1400&q=%ALCOHOL%&api_key=' + usdaKey;
 	var usdaFoodReportQueryUrl = 'http://api.nal.usda.gov/ndb/reports/?ndbno=%NDBNO%&type=f&format=json&api_key=' + usdaKey;
 	var slimDrink = JSON.parse(localStorage.getItem('slimDrink')) || {};
 
-	$('#step1form').submit(function()
+	$('#submit').click(function()
 	{
+		console.log('TEST');
 		slimDrink.currentWeight = $('#weight').val().trim();
 		slimDrink.targetCalories = $('#calories').val().trim();
-		slimDrink.gender = 'gender';
+		slimDrink.gender = $('input[type=radio]:checked').val().trim();
+		console.log(slimDrink.currentWeight);
+		console.log(slimDrink.targetCalories);
+		console.log(slimDrink.gender);
 
 		localStorage.setItem('slimDrink', JSON.stringify(slimDrink));
-
-		return false;
 	});
 
 	$('.alcohol').click(function()
@@ -56,30 +53,17 @@ $(document).ready(function()
 
 	function calculateBAC(hours)
 	{
-		var standardDrink;
+		var numberOfDrinks;
 		var genderVar;
 
-		switch(slimDrink.alcoholChoice)
-		{
-			case 'beer':
-				standardDrink = 12;
-				break;
-			case 'wine':
-				standardDrink = 5;
-				break;
-			case 'liquor':
-				standardDrink = 2;
-				break;
-		}
-
-		standardDrink *= calculateNumberOfDrinks();
+		numberOfDrinks = calculateNumberOfDrinks();
 
 		if(slimDrink.gender === 'male')
 			genderVar = .68;
 		else
 			genderVar = .55;
 
-		return (standardDrink * slimDrink.alcoholContent)/(slimDrink.currentWeight * 454 * genderVar) * 100 * hours;
+		return ((((numberOfDrinks * 14)/(slimDrink.currentWeight * 454 * genderVar)) * 100) - (hours * .015)).toFixed(2);
 	}
 
 	function calculateNumberOfDrinks()
