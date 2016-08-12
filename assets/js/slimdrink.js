@@ -14,9 +14,6 @@ $(document).ready(function()
 		slimDrink.currentWeight = $('#weight').val().trim();
 		slimDrink.targetCalories = $('#calories').val().trim();
 		slimDrink.gender = $('input[type=radio]:checked').val().trim();
-		console.log(slimDrink.currentWeight);
-		console.log(slimDrink.targetCalories);
-		console.log(slimDrink.gender);
 
 		localStorage.setItem('slimDrink', JSON.stringify(slimDrink));
 	});
@@ -50,8 +47,6 @@ $(document).ready(function()
 		});
 	});
 
-	
-
 	function calculateBAC(hours)
 	{
 		var numberOfDrinks;
@@ -59,7 +54,7 @@ $(document).ready(function()
 
 		numberOfDrinks = calculateNumberOfDrinks();
 
-		if(slimDrink.gender === 'male')
+		if(slimDrink.gender === 'Male')
 			genderVar = .68;
 		else
 			genderVar = .55;

@@ -1,7 +1,8 @@
 $(document).ready(function()
 {
 	var slimDrink = JSON.parse(localStorage.getItem('slimDrink')) || {};
-	console.log('TEST');
+	slimDrink.numberOfDrinks = calculateNumberOfDrinks();
+	localStorage.setItem('slimDrink', JSON.stringify(slimDrink));
 	for(var i = 1; i <= 4; i++)
 	{
 		var div = $('<div>').addClass('hours');
@@ -30,7 +31,7 @@ $(document).ready(function()
 
 	function calculateNumberOfDrinks()
 	{
-		return Math.floor(slimDrink.targetCalories / slimDrink.alcoholCalories);
+		return (slimDrink.targetCalories / slimDrink.alcoholCalories).toFixed(2);
 	}
 
 	$('.hours').click(function()
