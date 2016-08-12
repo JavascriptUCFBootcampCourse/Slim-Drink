@@ -11,7 +11,6 @@ $(document).ready(function()
 
 	$('#submit').click(function()
 	{
-		console.log('TEST');
 		slimDrink.currentWeight = $('#weight').val().trim();
 		slimDrink.targetCalories = $('#calories').val().trim();
 		slimDrink.gender = $('input[type=radio]:checked').val().trim();
@@ -50,6 +49,8 @@ $(document).ready(function()
 			});
 		});
 	});
+
+	
 
 	function calculateBAC(hours)
 	{
