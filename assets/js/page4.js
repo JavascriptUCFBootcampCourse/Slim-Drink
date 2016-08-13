@@ -5,5 +5,5 @@ $(document).ready(function()
 	var bac = $('<h3>').text(slimDrink.bac);
 	var numDrinks = $('<h3>').text('Number of Drinks = ' + slimDrink.numberOfDrinks);
 	
-	$('.hoursoutput').append(hours.append(bac).append(numDrinks));
+	$('.hoursoutput1').append(hours.append(bac).append(numDrinks));
 })

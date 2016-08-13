@@ -2607,7 +2607,7 @@ label.label-checkbox.active-state,
 label.label-radio.active-state {
   -webkit-transition-duration: 0ms;
   transition-duration: 0ms;
-  background-color: #d9d9d9;
+  background-color: transparent;;
 }
 html:not(.watch-active-state) label.label-checkbox:active .item-inner:after,
 html:not(.watch-active-state) label.label-radio:active .item-inner:after,
